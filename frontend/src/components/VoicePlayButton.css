@@ -1,0 +1,125 @@
+.voice-play-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.voice-play-button {
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #6c757d;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+/* 尺寸变体 */
+.voice-play-button--small {
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+}
+
+.voice-play-button--medium {
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+}
+
+.voice-play-button--large {
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+}
+
+.voice-play-button:hover:not(:disabled) {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  transform: scale(1.1);
+}
+
+.voice-play-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.voice-play-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 播放中状态 */
+.voice-play-button.playing {
+  color: #667eea;
+  animation: pulse-play 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-play {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* 加载中状态 */
+.voice-play-button.loading .loading-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 错误提示 */
+.voice-play-error {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  margin-bottom: 4px;
+  background: rgba(220, 53, 69, 0.9);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  white-space: nowrap;
+  animation: fadeInUp 0.2s ease;
+  z-index: 10;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* 深色模式 */
+@media (prefers-color-scheme: dark) {
+  .voice-play-button {
+    color: #adb5bd;
+  }
+
+  .voice-play-button:hover:not(:disabled) {
+    background: rgba(102, 126, 234, 0.2);
+    color: #8b9eff;
+  }
+
+  .voice-play-button.playing {
+    color: #8b9eff;
+  }
+}

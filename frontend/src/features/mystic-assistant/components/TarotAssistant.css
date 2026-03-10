@@ -1,0 +1,642 @@
+/**
+ * 塔罗牌占卜样式
+ * 神秘紫金配色，动画丰富
+ */
+
+.tarot-assistant {
+  min-height: 100%;
+  background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);
+  color: #e8d5f0;
+  padding: 20px;
+}
+
+.tarot-assistant .inner-back-button {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: #ffd700;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.tarot-assistant .inner-back-button:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: #ffd700;
+}
+
+.tarot-header {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+.tarot-header h1 {
+  font-size: 2.5em;
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+.tarot-header p {
+  color: #b8a0c8;
+  font-style: italic;
+}
+
+.tarot-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 牌阵选择 */
+.tarot-spread-selection h2,
+.tarot-question-input h2,
+.tarot-shuffle h2,
+.tarot-reveal h2 {
+  text-align: center;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #9a88a8;
+  margin-bottom: 30px;
+}
+
+.spread-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.spread-card {
+  background: rgba(45, 27, 78, 0.6);
+  border: 2px solid rgba(255, 215, 0, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.spread-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.spread-card.selected {
+  border-color: #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.spread-icon {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.spread-card h3 {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.spread-card p {
+  font-size: 0.85em;
+  color: #9a88a8;
+  margin-bottom: 10px;
+}
+
+.card-count {
+  display: inline-block;
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 0.8em;
+}
+
+/* 按钮 */
+.tarot-btn {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tarot-btn.primary {
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  color: #1a0a2e;
+  font-weight: bold;
+}
+
+.tarot-btn.primary:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+.tarot-btn.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tarot-btn.secondary {
+  background: transparent;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  color: #ffd700;
+}
+
+.tarot-btn.secondary:hover {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.tarot-btn.glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* 问题输入 */
+.tarot-question-input {
+  text-align: center;
+}
+
+.spread-preview {
+  margin-bottom: 20px;
+}
+
+.spread-tag {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+.tarot-question-input textarea {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  color: #e8d5f0;
+  font-size: 1.1em;
+  resize: none;
+  margin-bottom: 15px;
+}
+
+.tarot-question-input textarea:focus {
+  outline: none;
+  border-color: #ffd700;
+}
+
+.example-questions {
+  margin-bottom: 20px;
+  color: #9a88a8;
+}
+
+.example-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e8d5f0;
+  padding: 5px 12px;
+  border-radius: 15px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.example-btn:hover {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+/* 洗牌动画 */
+.tarot-shuffle {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.shuffle-animation {
+  width: 300px;
+  height: 200px;
+  margin: 40px auto;
+  position: relative;
+  perspective: 1000px;
+}
+
+.shuffle-card {
+  position: absolute;
+  width: 80px;
+  height: 120px;
+  background: linear-gradient(135deg, #2d1b4e, #4a2c7a);
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.shuffle-animation.shuffling .shuffle-card {
+  animation: shuffle 0.5s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes shuffle {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  25% { transform: translate(calc(-50% + 50px), -50%) rotate(10deg); }
+  50% { transform: translate(-50%, -50%) rotate(0deg); }
+  75% { transform: translate(calc(-50% - 50px), -50%) rotate(-10deg); }
+  100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+/* 翻牌 */
+.tarot-reveal {
+  text-align: center;
+}
+
+.tarot-reveal .start-reading-btn {
+  margin-top: 30px;
+}
+
+.cards-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.cards-layout.celtic_cross {
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+.tarot-card-slot {
+  width: 90px;
+  perspective: 1000px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-position-label {
+  font-size: 0.75em;
+  color: #9a88a8;
+  margin-bottom: 5px;
+  text-align: center;
+  height: 20px;
+}
+
+.card-inner {
+  width: 90px;
+  height: 140px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.tarot-card-slot.revealed .card-inner {
+  transform: rotateY(180deg);
+}
+
+.tarot-card-slot.ready .card-inner {
+  animation: cardReady 1s ease-in-out infinite;
+}
+
+@keyframes cardReady {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+}
+
+.card-back, .card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #2d1b4e, #4a2c7a);
+  border: 2px solid #ffd700;
+}
+
+.card-back-design {
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 5px;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #f5e6d3, #e8d5c4);
+  border: 2px solid #ffd700;
+  transform: rotateY(180deg);
+  color: #2d1b4e;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card-front.reversed {
+  transform: rotateY(180deg) rotate(180deg);
+}
+
+.card-name {
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.card-name-en {
+  font-size: 0.65em;
+  color: #666;
+  text-align: center;
+  width: 100%;
+}
+
+.reversed-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #8b0000;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.6em;
+}
+
+/* 加载动画 */
+.tarot-loading {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.crystal-ball {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 30px;
+  background: radial-gradient(circle at 30% 30%, #9b7ebd, #4a2c7a 50%, #2d1b4e);
+  border-radius: 50%;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+.ball-inner {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 30%;
+  height: 30%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 50%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* 解读和对话 */
+.tarot-chat {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .tarot-chat {
+    grid-template-columns: 1fr;
+  }
+}
+
+.reading-summary {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  overflow: hidden;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.reading-summary h3 {
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+.cards-mini {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.mini-card {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85em;
+}
+
+.mini-card .position {
+  color: #9a88a8;
+  font-size: 0.8em;
+}
+
+.mini-card .name {
+  color: #ffd700;
+}
+
+.mini-card.reversed {
+  border-color: #8b0000;
+}
+
+.mini-card .rev-mark {
+  color: #8b0000;
+}
+
+.reading-content {
+  line-height: 1.8;
+  color: #e8d5f0;
+}
+
+.interpretation {
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.advice-box {
+  background: rgba(255, 215, 0, 0.1);
+  border-left: 3px solid #ffd700;
+  padding: 15px;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 20px;
+  color: #e8d5f0;
+}
+
+.luck-meter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e8d5f0;
+}
+
+.meter-bar {
+  flex: 1;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* 对话区域 */
+.tarot-assistant .chat-section {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tarot-assistant .chat-section h3 {
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+.tarot-assistant .chat-messages {
+  flex: 1;
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.tarot-assistant .chat-hint {
+  color: #9a88a8;
+  text-align: center;
+  padding: 40px 20px;
+  font-style: italic;
+}
+
+.tarot-assistant .chat-message {
+  margin-bottom: 15px;
+}
+
+.tarot-assistant .chat-message.user .message-content {
+  background: rgba(255, 215, 0, 0.25);
+  margin-left: 20%;
+  border-radius: 15px 15px 5px 15px;
+  color: #1a0a2e;
+  border: 1px solid rgba(255, 215, 0, 0.5);
+}
+
+.tarot-assistant .chat-message.assistant .message-content {
+  background: rgba(45, 27, 78, 0.8);
+  margin-right: 20%;
+  border-radius: 15px 15px 15px 5px;
+  color: #ffffff;
+  border: 1px solid rgba(155, 126, 189, 0.5);
+}
+
+.tarot-assistant .message-content {
+  padding: 12px 15px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.tarot-assistant .message-content.typing {
+  animation: tarot-blink 1s infinite;
+}
+
+@keyframes tarot-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.tarot-assistant .chat-input-area {
+  display: flex;
+  gap: 10px;
+}
+
+.tarot-assistant .chat-input-area input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 25px;
+  padding: 12px 20px;
+  color: #e8d5f0;
+  font-size: 1em;
+}
+
+.tarot-assistant .chat-input-area input:focus {
+  outline: none;
+  border-color: #ffd700;
+}
+
+.tarot-assistant .chat-input-area button {
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  color: #1a0a2e;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tarot-assistant .chat-input-area button:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.tarot-assistant .chat-input-area button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.restart {
+  margin-top: 20px;
+  grid-column: 1 / -1;
+  justify-self: center;
+}

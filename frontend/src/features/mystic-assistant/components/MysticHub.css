@@ -1,0 +1,320 @@
+/**
+ * 玄学AI助手中心样式
+ */
+
+.mystic-hub {
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+}
+
+/* 首页样式 */
+.mystic-hub-home {
+  min-height: 100%;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  padding: 40px 20px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+.hub-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hub-header h1 {
+  font-size: 3em;
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.hub-header p {
+  color: #a8a0c0;
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+/* 工具卡片展示 */
+.tools-showcase {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.tool-card {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateX(10px);
+}
+
+.tool-card:hover::before {
+  opacity: 0.2;
+}
+
+/* 颜色主题 */
+.tool-card.purple {
+  background: linear-gradient(135deg, rgba(128, 0, 128, 0.3), rgba(75, 0, 130, 0.3));
+  border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.tool-card.purple:hover {
+  border-color: rgba(138, 43, 226, 0.6);
+  box-shadow: 0 10px 40px rgba(138, 43, 226, 0.3);
+}
+
+.tool-card.blue {
+  background: linear-gradient(135deg, rgba(0, 100, 200, 0.3), rgba(0, 50, 150, 0.3));
+  border: 1px solid rgba(100, 150, 255, 0.3);
+}
+
+.tool-card.blue:hover {
+  border-color: rgba(100, 150, 255, 0.6);
+  box-shadow: 0 10px 40px rgba(100, 150, 255, 0.3);
+}
+
+.tool-card.red {
+  background: linear-gradient(135deg, rgba(180, 50, 50, 0.3), rgba(100, 20, 20, 0.3));
+  border: 1px solid rgba(220, 80, 80, 0.3);
+}
+
+.tool-card.red:hover {
+  border-color: rgba(220, 80, 80, 0.6);
+  box-shadow: 0 10px 40px rgba(220, 80, 80, 0.3);
+}
+
+.tool-icon {
+  font-size: 4em;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.tool-info {
+  flex: 1;
+}
+
+.tool-info h2 {
+  color: #fff;
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+
+.tool-info .subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9em;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.tool-info .description {
+  color: #c8c0d8;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.feature-tag {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 5px 12px;
+  font-size: 0.85em;
+  color: #e0d8f0;
+}
+
+.tool-arrow {
+  font-size: 2em;
+  color: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tool-card:hover .tool-arrow {
+  color: rgba(255, 255, 255, 0.7);
+  transform: translateX(10px);
+}
+
+/* 免责声明 */
+.disclaimer {
+  max-width: 600px;
+  margin: 50px auto 0;
+  text-align: center;
+}
+
+.disclaimer p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85em;
+  line-height: 1.6;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .hub-header h1 {
+    font-size: 2em;
+  }
+
+  .tool-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .tool-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 3em;
+  }
+
+  .tool-info h2 {
+    font-size: 1.5em;
+  }
+
+  .features {
+    justify-content: center;
+  }
+
+  .tool-arrow {
+    display: none;
+  }
+
+  .tool-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* 动画 */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.tool-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.tool-card:hover::after {
+  left: 100%;
+}
+
+/* 星星背景动画 */
+.mystic-hub-home {
+  position: relative;
+  overflow: hidden;
+}
+
+.mystic-hub-home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, white, transparent),
+    radial-gradient(2px 2px at 40px 70px, white, transparent),
+    radial-gradient(2px 2px at 50px 160px, white, transparent),
+    radial-gradient(2px 2px at 90px 40px, white, transparent),
+    radial-gradient(2px 2px at 130px 80px, white, transparent),
+    radial-gradient(2px 2px at 160px 120px, white, transparent),
+    radial-gradient(1px 1px at 200px 200px, white, transparent),
+    radial-gradient(1px 1px at 250px 50px, white, transparent),
+    radial-gradient(1px 1px at 300px 150px, white, transparent);
+  background-repeat: repeat;
+  background-size: 400px 400px;
+  animation: twinkle-bg 8s linear infinite;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+@keyframes twinkle-bg {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+
+/* 权限提示 */
+.mystic-permission-notice {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 16px;
+  padding: 24px 32px;
+  margin: 0 auto 40px;
+  max-width: 500px;
+  text-align: center;
+  color: #fff;
+}
+
+.mystic-permission-notice p {
+  margin: 0;
+  font-size: 16px;
+  color: #ffd700;
+}
+
+.mystic-permission-notice h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  color: #ffd700;
+}
+
+.mystic-permission-notice > p:last-of-type {
+  margin-bottom: 16px;
+  color: #ddd;
+}
+
+/* 禁用状态 */
+.tools-showcase.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  filter: grayscale(30%);
+}

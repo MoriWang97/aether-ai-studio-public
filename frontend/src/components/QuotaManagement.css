@@ -1,0 +1,332 @@
+.quota-management {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.quota-management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.quota-management-header h4 {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.refresh-btn {
+  padding: 8px 16px;
+  background: #f1f3f4;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background: #e8eaed;
+}
+
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 加载状态 */
+.loading-state {
+  padding: 40px;
+  text-align: center;
+  color: #5f6368;
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e0e0e0;
+  border-top-color: #1a73e8;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 错误状态 */
+.error-state {
+  padding: 20px;
+  text-align: center;
+  color: #d93025;
+  background: #fce8e6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.error-state button {
+  padding: 6px 12px;
+  background: #d93025;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 表格 */
+.quota-table-container {
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+.quota-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.quota-table th,
+.quota-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.quota-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #5f6368;
+  white-space: nowrap;
+}
+
+.quota-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.user-cell {
+  min-width: 200px;
+}
+
+.user-cell .user-email {
+  font-weight: 500;
+  color: #202124;
+}
+
+.user-cell .user-nickname {
+  font-size: 0.8rem;
+  color: #5f6368;
+}
+
+.number-cell {
+  text-align: center;
+  font-weight: 500;
+}
+
+.number-cell.bonus {
+  color: #34a853;
+}
+
+.number-cell.total {
+  color: #1a73e8;
+  font-weight: 600;
+}
+
+.number-cell.exhausted {
+  color: #d93025;
+}
+
+.action-cell {
+  text-align: center;
+}
+
+.grant-btn {
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #34a853 0%, #28a745 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.grant-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(52, 168, 83, 0.3);
+}
+
+/* 分页 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  background: #f1f3f4;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #e8eaed;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-info {
+  color: #5f6368;
+  font-size: 0.875rem;
+}
+
+/* 赋予额度弹窗 */
+.grant-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+.grant-modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.grant-modal h4 {
+  margin: 0 0 16px 0;
+  color: #202124;
+  font-size: 1.1rem;
+}
+
+.grant-user-info,
+.grant-current-info {
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  color: #5f6368;
+}
+
+.grant-user-info strong,
+.grant-current-info strong {
+  color: #202124;
+}
+
+.grant-message {
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin: 12px 0;
+  font-size: 0.875rem;
+}
+
+.grant-message.success {
+  background: #e6f4ea;
+  color: #137333;
+}
+
+.grant-message.error {
+  background: #fce8e6;
+  color: #c5221f;
+}
+
+.grant-form-group {
+  margin: 16px 0;
+}
+
+.grant-form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #202124;
+  font-size: 0.875rem;
+}
+
+.grant-form-group input,
+.grant-form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.grant-form-group input:focus,
+.grant-form-group textarea:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.1);
+}
+
+.grant-form-group input[type="number"] {
+  max-width: 120px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.cancel-btn {
+  padding: 10px 20px;
+  background: #f1f3f4;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+  background: #e8eaed;
+}
+
+.confirm-grant-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #34a853 0%, #28a745 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.confirm-grant-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+}
+
+.confirm-grant-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

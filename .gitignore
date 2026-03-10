@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+frontend/build/
+backend/bin/
+backend/obj/
+backend/publish/
+
+# Environment files (contain secrets)
+.env.local
+.env.production
+backend/appsettings.Development.json
+
+# IDE
+.vs/
+.vscode/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

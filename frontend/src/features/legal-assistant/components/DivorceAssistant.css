@@ -1,0 +1,387 @@
+/* 离婚财产分析助手样式 */
+
+.divorce-assistant {
+  padding-bottom: 100px;
+}
+
+.assistant-header {
+  margin-bottom: 24px;
+}
+
+.assistant-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.assistant-desc {
+  color: #888;
+  margin: 0;
+}
+
+/* 标签导航 */
+.tab-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  background: transparent;
+  color: #888;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.tab-btn.active {
+  background: rgba(233, 30, 99, 0.2);
+  color: #e91e63;
+  border-color: #e91e63;
+}
+
+.tab-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.badge {
+  padding: 2px 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+.tab-btn.active .badge {
+  background: #e91e63;
+  color: #fff;
+}
+
+/* 表单区域 */
+.tab-content {
+  animation: fadeIn 0.2s ease;
+}
+
+.form-section {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.form-section h3 {
+  margin: 0 0 16px 0;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-row:last-child {
+  margin-bottom: 0;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.required {
+  color: #f44336;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #e91e63;
+  background: rgba(233, 30, 99, 0.05);
+}
+
+.form-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* 资产汇总 */
+.asset-summary {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.summary-item {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+
+.summary-item .label {
+  display: block;
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.summary-item .value {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.summary-item .value.positive {
+  color: #4caf50;
+}
+
+.summary-item .value.negative {
+  color: #f44336;
+}
+
+/* 添加资产表单 */
+.add-asset-form {
+  padding: 20px;
+  background: rgba(233, 30, 99, 0.05);
+  border: 1px dashed rgba(233, 30, 99, 0.3);
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.add-asset-form h3 {
+  margin: 0 0 16px 0;
+  color: #e91e63;
+}
+
+.btn-add {
+  padding: 12px 24px;
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.btn-add:hover {
+  background: #c2185b;
+}
+
+/* 资产表格 */
+.asset-list {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.asset-list h3 {
+  margin: 0 0 16px 0;
+}
+
+.empty-tip {
+  text-align: center;
+  color: #888;
+  padding: 30px;
+}
+
+.asset-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.asset-table th,
+.asset-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.asset-table th {
+  color: #888;
+  font-weight: 500;
+}
+
+.asset-table td {
+  color: #fff;
+}
+
+.asset-table td.positive {
+  color: #4caf50;
+}
+
+.asset-table td.negative {
+  color: #f44336;
+}
+
+.asset-table .btn-remove {
+  padding: 6px 12px;
+  background: rgba(244, 67, 54, 0.2);
+  color: #f44336;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.asset-table .btn-remove:hover {
+  background: #f44336;
+  color: #fff;
+}
+
+/* 底部操作栏 */
+.action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 24px;
+  background: rgba(26, 26, 46, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.btn-analyze {
+  padding: 14px 40px;
+  background: linear-gradient(120deg, #e91e63, #9c27b0);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-analyze:hover:not(:disabled) {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+}
+
+.btn-analyze:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.doc-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-doc {
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-doc:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-doc.primary {
+  background: #4caf50;
+  border-color: #4caf50;
+}
+
+.btn-doc.primary:hover {
+  background: #388e3c;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .tab-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+  }
+  
+  .tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .asset-summary {
+    flex-direction: column;
+  }
+  
+  .action-bar {
+    flex-direction: column;
+    padding: 12px;
+  }
+  
+  .btn-analyze,
+  .doc-actions {
+    width: 100%;
+  }
+  
+  .btn-analyze {
+    padding: 16px;
+  }
+  
+  .doc-actions {
+    flex-direction: column;
+  }
+  
+  .btn-doc {
+    width: 100%;
+  }
+  
+  .asset-table {
+    display: block;
+    overflow-x: auto;
+  }
+}

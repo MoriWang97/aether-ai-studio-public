@@ -1,0 +1,284 @@
+/* 证据面板样式 */
+
+.evidence-panel {
+  padding: 20px 0;
+}
+
+.recording-tips {
+  padding: 12px 16px;
+  background: rgba(33, 150, 243, 0.1);
+  border: 1px solid rgba(33, 150, 243, 0.3);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #64b5f6;
+}
+
+.evidence-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.action-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-action {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-record {
+  background: #f44336;
+  color: #fff;
+}
+
+.btn-record:hover:not(:disabled) {
+  background: #d32f2f;
+}
+
+.btn-upload {
+  background: #2196f3;
+  color: #fff;
+}
+
+.btn-upload:hover:not(:disabled) {
+  background: #1976d2;
+}
+
+.btn-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.recording-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(244, 67, 54, 0.1);
+  border-radius: 8px;
+}
+
+.recording-indicator {
+  color: #f44336;
+  font-weight: 500;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.btn-stop-recording {
+  padding: 8px 16px;
+  background: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-cancel-recording {
+  padding: 8px 16px;
+  background: transparent;
+  color: #888;
+  border: 1px solid #888;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.error-message {
+  padding: 12px 16px;
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+  border-radius: 8px;
+  color: #f44336;
+  margin-bottom: 16px;
+}
+
+/* 证据列表 */
+.evidence-list {
+  margin-bottom: 24px;
+}
+
+.evidence-list h4 {
+  margin: 0 0 16px 0;
+  color: #fff;
+}
+
+.empty-evidence {
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  color: #888;
+}
+
+.evidence-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.evidence-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.evidence-icon {
+  font-size: 1.5rem;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.evidence-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.evidence-name {
+  display: block;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.evidence-type {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.evidence-transcript {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.evidence-transcript strong {
+  color: #888;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.evidence-transcript p {
+  margin: 0;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.evidence-actions-inline {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-transcribe, .btn-preview, .btn-remove {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.btn-transcribe {
+  background: #4caf50;
+  color: #fff;
+}
+
+.btn-transcribe:disabled {
+  background: #666;
+  color: #aaa;
+  cursor: wait;
+}
+
+.btn-preview {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.evidence-actions-inline .btn-remove {
+  background: transparent;
+  color: #888;
+}
+
+.evidence-actions-inline .btn-remove:hover {
+  color: #f44336;
+}
+
+/* 建议证据列表 */
+.suggested-evidence {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.suggested-evidence h4 {
+  margin: 0 0 16px 0;
+  color: #fff;
+}
+
+.suggested-evidence ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.suggested-evidence li {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.suggested-evidence li.collected {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .evidence-actions {
+    flex-direction: column;
+  }
+  
+  .btn-action {
+    width: 100%;
+  }
+  
+  .recording-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .evidence-item {
+    flex-direction: column;
+  }
+  
+  .evidence-actions-inline {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "KeyVault": {
+    "Url": "https://your-keyvault-name.vault.azure.net/"
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=aiservice.db"
+  },
+  "Jwt": {
+    "Issuer": "AiServiceApi",
+    "Audience": "AiServiceApi",
+    "AccessTokenExpiryMinutes": "10080"
+  },
+  "Development": {
+    "EnableDevLogin": true
+  },
+  "AzureAI": {
+    "Endpoint": "https://your-azure-ai-endpoint.cognitiveservices.azure.com",
+    "DeploymentName": "your-image-deployment-name",
+    "ChatDeploymentName": "your-chat-deployment-name"
+  },
+  "Tavily": {
+    "ApiKey": ""
+  },
+  "Rag": {
+    "EnableWebSearch": true,
+    "MaxSearchResults": 5
+  },
+  "AzureSpeech": {
+    "Region": "eastasia"
+  }
+}
+
+// ============================================================
+// Azure Key Vault 密钥配置说明
+// ============================================================
+// 请在 Azure Key Vault 中创建以下 Secrets（注意：Key Vault 的密钥名称用 -- 代替 : 分隔符）:
+//
+// 1. Jwt--SecretKey
+//    描述: JWT 令牌签名密钥
+//    示例值: 随机生成的 Base64 字符串（至少32字节）
+//
+// 2. AzureAI--ApiKey
+//    描述: Azure AI 服务的 API 密钥
+//    示例值: 从 Azure Portal 获取的密钥
+//
+// 3. Email--SmtpHost
+//    描述: SMTP 邮件服务器地址
+//    示例值: smtp.163.com
+//
+// 4. Email--SmtpPort
+//    描述: SMTP 端口号
+//    示例值: 25 或 587
+//
+// 5. Email--SmtpUser
+//    描述: SMTP 用户名
+//    示例值: your-email@163.com
+//
+// 6. Email--SmtpPassword
+//    描述: SMTP 密码或授权码
+//    示例值: 你的邮箱授权码
+//
+// 7. Email--FromEmail
+//    描述: 发件人邮箱地址
+//    示例值: your-email@163.com
+//
+// 8. Email--FromName
+//    描述: 发件人显示名称
+//    示例值: Aether AI Studio
+//
+// 9. Tavily--ApiKey
+//    描述: Tavily Web 搜索 API 密钥（用于 RAG 功能）
+//    示例值: tvly-xxxxxxxxxxxxxxxx
+//    获取地址: https://tavily.com/
+//
+// 10. AzureSpeech--ApiKey
+//    描述: Azure Speech 服务的 API 密钥（用于语音识别和语音合成）
+//    示例值: 从 Azure Portal 获取的密钥
+//    获取地址: https://portal.azure.com/ > 创建 Speech 资源
+//    注意: AzureSpeech--Region 需要在 appsettings.json 中配置（如 eastasia）
+//
+// ============================================================
+// 本地开发配置
+// ============================================================
+// 方式1: 使用 Azure CLI 登录
+//   az login
+//   然后 DefaultAzureCredential 会自动使用你的登录凭据
+//
+// 方式2: 使用 Visual Studio 登录
+//   在 VS 中通过 Tools > Options > Azure Service Authentication 登录
+//
+// 方式3: 设置环境变量（Service Principal）
+//   AZURE_TENANT_ID=your-tenant-id
+//   AZURE_CLIENT_ID=your-client-id
+//   AZURE_CLIENT_SECRET=your-client-secret
+//
+// ============================================================
+// 线上部署（Azure App Service）
+// ============================================================
+// 1. 为 App Service 启用 System-assigned Managed Identity
+// 2. 在 Key Vault 的 Access Policies 中添加该 Managed Identity，授予 Get 和 List 权限
+// 3. 配置 App Service 的 Application Settings:
+//    KeyVault__Url = https://your-keyvault-name.vault.azure.net/
